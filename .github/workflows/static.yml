@@ -43,6 +43,12 @@ jobs:
         with:
           php_version: "8.2.18"
           working_dir: './inc'
+        env:
+          SENDGRID_API_KEY: '${{ environments.SENDGRID_API_KEY }}'
+          MAIL_TO_ADDR: '${{ environments.MAIL_TO_ADDR }}'
+          MAIL_TO_NAME: '${{ environments.MAIL_TO_NAME }}'
+          MAIL_FROM_ADDR: '${{ environments.MAIL_FROM_ADDR }}'
+          MAIL_FROM_NAME: '${{ environments.MAIL_FROM_NAME }}'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
