@@ -226,7 +226,7 @@ $('#contactForm').validate({
 		$.ajax({      	
 
 	      type: "POST",
-	      url: "inc/sendEmail.php",
+	      url: "inc/mail.php",
 	      data: $(form).serialize(),
 	      beforeSend: function() { 
 

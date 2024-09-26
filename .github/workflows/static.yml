@@ -38,6 +38,10 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          command: cd inc && composer install
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
