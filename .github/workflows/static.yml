@@ -41,8 +41,8 @@ jobs:
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          working-directory: ./inc
-          command: composer install
+          php_version: "8.2.18"
+          working_dir: './inc'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
