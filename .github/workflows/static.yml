@@ -38,17 +38,6 @@ jobs:
         with:
           # Upload entire repository
           path: '.'
-      - name: Install dependencies
-        uses: php-actions/composer@v6
-        with:
-          php_version: "8.2.18"
-          working_dir: './inc'
-        env:
-          SENDGRID_API_KEY: '${{ env.SENDGRID_API_KEY }}'
-          MAIL_TO_ADDR: '${{ env.MAIL_TO_ADDR }}'
-          MAIL_TO_NAME: '${{ env.MAIL_TO_NAME }}'
-          MAIL_FROM_ADDR: '${{ env.MAIL_FROM_ADDR }}'
-          MAIL_FROM_NAME: '${{ env.MAIL_FROM_NAME }}'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
